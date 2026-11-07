@@ -1,0 +1,110 @@
+/* ExamGuard Styles - Light/Dark, Gradient Header, Cards, Buttons */
+:root {
+  --primary: #4f46e5;
+  --bg: #f8fafc;
+  --bg-dark: #18181b;
+  --card: #fff;
+  --card-dark: #27272a;
+  --text: #18181b;
+  --text-dark: #f8fafc;
+  --danger: #ef4444;
+  --success: #22c55e;
+  --header-gradient: linear-gradient(90deg, #6366f1 0%, #60a5fa 100%);
+}
+[data-theme='dark'] {
+  --bg: var(--bg-dark);
+  --card: var(--card-dark);
+  --text: var(--text-dark);
+}
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  transition: background 0.3s, color 0.3s;
+}
+.header {
+  background: var(--header-gradient);
+  color: #fff;
+  padding: 1.5rem 0 1rem 0;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  border-radius: 0 0 1.5rem 1.5rem;
+  margin-bottom: 2rem;
+}
+.card {
+  background: var(--card);
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px #0001;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  transition: background 0.3s;
+}
+.button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin: 0.5rem 0;
+  transition: background 0.2s;
+}
+.button:active {
+  background: #3730a3;
+}
+.button.danger {
+  background: var(--danger);
+}
+.button.success {
+  background: var(--success);
+}
+.input, select {
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  border: 1px solid #d1d5db;
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+.palette {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+.palette-btn {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 2px solid var(--primary);
+  background: #fff;
+  color: var(--primary);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.palette-btn.selected {
+  background: var(--primary);
+  color: #fff;
+}
+.timer-bar {
+  height: 0.5rem;
+  background: var(--primary);
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  transition: width 0.5s;
+}
+.violation {
+  color: var(--danger);
+  font-weight: bold;
+}
+@media (max-width: 600px) {
+  .header { font-size: 1.2rem; }
+  .card { padding: 1rem; }
+  .button { padding: 0.5rem 1rem; font-size: 0.9rem; }
+}
